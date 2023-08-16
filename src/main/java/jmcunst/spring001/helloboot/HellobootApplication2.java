@@ -17,15 +17,18 @@ public class HellobootApplication2 {
         // 3.2. 서블릿 컨테이너 띄우기
         ServletWebServerFactory serverFactory = new TomcatServletWebServerFactory();
         WebServer webServer = serverFactory.getWebServer(serverContext -> { // 3.3 Servlet 등록
+            HelloController2 helloController2 = new HelloController2();
+
             serverContext.addServlet("frontcontroller", new HttpServlet() { // 3.6 프론트 컨트롤러
                 @Override
                 protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
                     if (req.getRequestURI().equals("/hello") && req.getMethod().equals(HttpMethod.GET.name())){
                         String name = req.getParameter("name");
 
-                        resp.setStatus(HttpStatus.OK.value());
+                        String ret = helloController2.hello(name);
+
                         resp.setContentType("text/plain");
-                        resp.getWriter().println("Hello " + name);
+                        resp.getWriter().println(ret);
                     }else{
                         resp.setStatus(HttpStatus.NOT_FOUND.value());
                     }
