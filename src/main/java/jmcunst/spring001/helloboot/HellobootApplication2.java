@@ -19,6 +19,7 @@ public class HellobootApplication2 {
         // 4.1 스프링 컨테이너 사용
         GenericApplicationContext applicationContext = new GenericApplicationContext();
         applicationContext.registerBean(HellobootApplication2.class);
+        applicationContext.registerBean(SimpleHelloService2.class); // 4.4 의존 오브젝트 DI 적용
         applicationContext.refresh();
 
         // 3.2. 서블릿 컨테이너 띄우기
