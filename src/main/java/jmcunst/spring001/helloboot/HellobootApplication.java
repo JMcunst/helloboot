@@ -1,8 +1,9 @@
 package jmcunst.spring001.helloboot;
 
+import jmcunst.spring001.config.MySpringBootApplication;
 import org.springframework.boot.SpringApplication;
 
-@MySpringBootAnnotation
+@MySpringBootApplication
 public class HellobootApplication {
 
     public static void main(String[] args) {
