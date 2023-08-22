@@ -1,10 +1,6 @@
 package jmcunst.spring001.helloboot;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Objects;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloController {
@@ -14,10 +10,12 @@ public class HelloController {
         this.helloService = helloService;
     }
 
+    @CrossOrigin
     @GetMapping("/hello")
-    public String hello(String name){
+    @ResponseBody // 응답을 JSON으로 변환
+    public String hello(@RequestParam String name) {
         if (name == null || name.trim().length() == 0) throw new IllegalArgumentException();
 
-        return helloService.sayHello(name);
+        return "{\"message\": \"" + helloService.sayHello(name) + "\"}";
     }
 }
