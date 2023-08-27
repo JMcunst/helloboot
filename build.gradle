@@ -13,6 +13,7 @@ java {
 
 repositories {
 	mavenCentral()
+	maven { url "https://clojars.org/repo/" }
 }
 
 dependencies {
@@ -22,6 +23,10 @@ dependencies {
 //	}
 //	implementation 'org.springframework.boot:spring-boot-starter-jetty'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation('org.springframework:spring-jdbc')
+	runtimeOnly('com.h2database:h2:2.1.214')
+	implementation 'hikari-cp:hikari-cp:3.0.1'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.eclipse.jetty:jetty-server:11.0.14'
 	testImplementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'

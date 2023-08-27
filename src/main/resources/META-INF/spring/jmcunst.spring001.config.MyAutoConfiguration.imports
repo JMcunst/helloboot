@@ -1,3 +1,4 @@
+jmcunst.spring001.config.autoconfig.DataSourceConfig
 jmcunst.spring001.config.autoconfig.PropertyPostProcessorConfig
 jmcunst.spring001.config.autoconfig.PropertyPlaceholderConfig
 jmcunst.spring001.config.autoconfig.TomcatWebServerConfig
