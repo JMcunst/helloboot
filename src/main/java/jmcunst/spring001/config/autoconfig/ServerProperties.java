@@ -1,7 +1,8 @@
 package jmcunst.spring001.config.autoconfig;
 
-import org.springframework.beans.factory.annotation.Value;
+import jmcunst.spring001.config.MyConfigurationProperties;
 
+@MyConfigurationProperties(prefix = "server")
 public class ServerProperties {
 
     private String contextPath;

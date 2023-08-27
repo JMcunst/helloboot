@@ -1,4 +1,4 @@
-jmcunst.spring001.config.autoconfig.ServerPropertiesConfig
+jmcunst.spring001.config.autoconfig.PropertyPostProcessorConfig
 jmcunst.spring001.config.autoconfig.PropertyPlaceholderConfig
 jmcunst.spring001.config.autoconfig.TomcatWebServerConfig
 jmcunst.spring001.config.autoconfig.JettyWebServerConfig
