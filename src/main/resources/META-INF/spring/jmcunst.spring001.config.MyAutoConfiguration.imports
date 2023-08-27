@@ -1,3 +1,4 @@
+jmcunst.spring001.config.autoconfig.PropertyPlaceholderConfig
 jmcunst.spring001.config.autoconfig.TomcatWebServerConfig
 jmcunst.spring001.config.autoconfig.JettyWebServerConfig
 jmcunst.spring001.config.autoconfig.DispatcherServletConfig
