@@ -10,13 +10,11 @@ public class HelloController {
         this.helloService = helloService;
     }
 
-    @CrossOrigin
     @GetMapping("/hello")
-    @ResponseBody // 응답을 JSON으로 변환
-    public String hello(@RequestParam String name) {
+    public String hello(String name) {
         if (name == null || name.trim().length() == 0) throw new IllegalArgumentException();
 
-        return "{\"message\": \"" + helloService.sayHello(name) + "\"}";
+        return helloService.sayHello(name);
     }
     @GetMapping("/count")
     public String count(String name){

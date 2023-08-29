@@ -1,11 +1,11 @@
 package jmcunst.spring001.helloboot;
 
 import jakarta.annotation.PostConstruct;
-import jmcunst.spring001.config.MySpringBootApplication;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-@MySpringBootApplication
+@SpringBootApplication
 public class HellobootApplication {
     private final JdbcTemplate jdbcTemplate;
 
