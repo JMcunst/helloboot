@@ -18,4 +18,8 @@ public class HelloController {
 
         return "{\"message\": \"" + helloService.sayHello(name) + "\"}";
     }
+    @GetMapping("/count")
+    public String count(String name){
+        return name + ":" + helloService.countOf(name);
+    }
 }

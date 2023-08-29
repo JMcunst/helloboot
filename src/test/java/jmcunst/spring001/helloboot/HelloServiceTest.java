@@ -23,11 +23,25 @@ import java.lang.annotation.Target;
 public class HelloServiceTest {
     @FastUnitTest
     void simpleHelloService(){
-        SimpleHelloService helloService = new SimpleHelloService();
+        SimpleHelloService helloService = new SimpleHelloService(getHelloRepository());
 
         String ret = helloService.sayHello("Test");
 
         Assertions.assertThat(ret).isEqualTo("Hello Test");
+    }
+
+    private static HelloRepository getHelloRepository() {
+        return new HelloRepository() {
+            @Override
+            public Hello findHello(String name) {
+                return null;
+            }
+
+            @Override
+            public void increaseCount(String name) {
+
+            }
+        };
     }
 
     @Test
