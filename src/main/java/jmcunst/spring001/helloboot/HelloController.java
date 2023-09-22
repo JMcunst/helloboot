@@ -1,5 +1,7 @@
 package jmcunst.spring001.helloboot;
 
+import jmcunst.spring001.dto.MyRequestDto;
+import jmcunst.spring001.dto.MyResponseDto;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,5 +21,12 @@ public class HelloController {
     @GetMapping("/count")
     public String count(String name){
         return name + ":" + helloService.countOf(name);
+    }
+
+    @PostMapping("/bye")
+    public MyResponseDto handleRequest(@RequestBody MyRequestDto request) {
+        // 요청 바디(request)를 그대로 응답으로 반환
+        MyResponseDto response = new MyResponseDto(request.getMessage());
+        return response;
     }
 }
